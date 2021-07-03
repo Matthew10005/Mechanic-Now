@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "324610673489",
+    "project_id": "mechanicnow-452af",
+    "storage_bucket": "mechanicnow-452af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324610673489:android:d71d11768e35f00595a170",
+        "android_client_info": {
+          "package_name": "com.example.mechanicnow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "324610673489-bka3vn4kqm8igo2spi2di3jgmog92dfl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0cFIfv0J0mNKFrnXxuG2cvmOpNtE3Sko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "324610673489-bka3vn4kqm8igo2spi2di3jgmog92dfl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
