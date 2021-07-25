@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView register;
+    private TextView register, registerMechanic,forgotPassword;
     private EditText editTextEmail, editTextPassword;
     private Button signIn;
 
@@ -37,6 +37,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
+
+        registerMechanic = (TextView) findViewById(R.id.registerMechanic);
+        registerMechanic.setOnClickListener(this);
+
+        forgotPassword = (TextView) findViewById(R.id.forgotPassword);
+        forgotPassword.setOnClickListener(this);
 
         signIn = (Button) findViewById(R.id.signIn);
         signIn.setOnClickListener(this);
@@ -57,15 +63,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this ,RegisterUser.class));
                 break;
 
+            case R.id.registerMechanic:
+                startActivity(new Intent(this ,RegisterActivity2.class));
+                break;
+
             case R.id.signIn:
                 userLogin();
                 break;
+
+            case R.id.forgotPassword:
+                startActivity(new Intent(this,ForgotPassword.class));
+                break;    
     }
 }
 
     private void userLogin() {
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+        String email = editTextEmail.getText().toString();
+        String password = editTextPassword.getText().toString();
 
         if(email.isEmpty()){
             editTextEmail.setError("Email is required!");
@@ -97,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                     if(user.isEmailVerified()) {
-
                         startActivity(new Intent(MainActivity.this, HomePageActivity.class));
                     }else{
                      user.sendEmailVerification();

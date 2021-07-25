@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/banner"
+        android:id="@+id/banner2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="MechanicNow"
@@ -22,7 +22,7 @@
 
 
     <TextView
-        android:id= "@+id/bannerDescription"
+        android:id= "@+id/bannerDescription2"
         android:layout_width="wrap_content"
         android:layout_height= "wrap_content"
         android:text="Roadside Assistance Solution"
@@ -31,11 +31,24 @@
         android:textAlignment="center"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banner"
+        app:layout_constraintTop_toBottomOf="@+id/banner2"
+        />
+
+    <TextView
+        android:id= "@+id/bannerDescription3"
+        android:layout_width="wrap_content"
+        android:layout_height= "wrap_content"
+        android:text="Mechanic Registration"
+        android:textStyle="italic"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bannerDescription2"
         />
 
     <EditText
-        android:id="@+id/fullname"
+        android:id="@+id/fullnameM"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -45,25 +58,25 @@
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bannerDescription"
+        app:layout_constraintTop_toBottomOf="@+id/bannerDescription3"
         />
 
     <EditText
-        android:id="@+id/age"
+        android:id="@+id/Mcompany"
         android:layout_width= "380dp"
         android:layout_height= "wrap_content"
         android:layout_marginTop="20dp"
         android:ems= "10"
-        android:hint="age"
-        android:inputType="number"
+        android:hint="company"
+        android:inputType="text"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullname"
+        app:layout_constraintTop_toBottomOf="@+id/fullnameM"
         />
 
     <EditText
-        android:id="@+id/phone"
+        android:id="@+id/Mphone"
         android:layout_width= "380dp"
         android:layout_height= "wrap_content"
         android:layout_marginTop="20dp"
@@ -73,11 +86,11 @@
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/age"
+        app:layout_constraintTop_toBottomOf="@+id/Mcompany"
         />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/Memail"
         android:layout_width= "380dp"
         android:layout_height= "wrap_content"
         android:layout_marginTop="20dp"
@@ -87,11 +100,11 @@
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone"
+        app:layout_constraintTop_toBottomOf="@+id/Mphone"
         />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/Mpassword"
         android:layout_width= "380dp"
         android:layout_height= "wrap_content"
         android:layout_marginTop="20dp"
@@ -101,11 +114,11 @@
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/Memail"
         />
 
     <Button
-        android:id="@+id/registerUser"
+        android:id="@+id/registerMechanic"
         android:layout_width="380dp"
         android:layout_height="70dp"
         android:layout_marginTop="24dp"
@@ -116,11 +129,11 @@
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/Mpassword"
         />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/MprogressBar"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
