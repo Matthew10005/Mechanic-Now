@@ -3,6 +3,7 @@
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -24,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    CardView selectHelp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,15 @@ import org.jetbrains.annotations.NotNull;
 
         setSupportActionBar(toolbar);
 
-        logout = (Button) findViewById(R.id.logout);
+        /*selectHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePageActivity.this, MapsActivityTow.class));
+            }
+        });*/
 
+
+        logout = (Button) findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

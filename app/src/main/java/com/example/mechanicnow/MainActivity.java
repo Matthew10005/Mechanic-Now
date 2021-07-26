@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.registerMechanic:
-                startActivity(new Intent(this ,RegisterActivity2.class));
+                startActivity(new Intent(this ,RegisterMechanic.class));
                 break;
 
             case R.id.signIn:
