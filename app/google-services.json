@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "324610673489",
-    "project_id": "mechanicnow-452af",
-    "storage_bucket": "mechanicnow-452af.appspot.com"
+    "project_number": "691548204729",
+    "project_id": "mechanic-now-db",
+    "storage_bucket": "mechanic-now-db.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:324610673489:android:d71d11768e35f00595a170",
+        "mobilesdk_app_id": "1:691548204729:android:37ecd258ac4ffeb1b2f568",
         "android_client_info": {
           "package_name": "com.example.mechanicnow"
         }
       },
       "oauth_client": [
         {
-          "client_id": "324610673489-bka3vn4kqm8igo2spi2di3jgmog92dfl.apps.googleusercontent.com",
+          "client_id": "691548204729-r89bgss5h153gggm5tkaku7lpqbmk1d9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA0cFIfv0J0mNKFrnXxuG2cvmOpNtE3Sko"
+          "current_key": "AIzaSyB5L26U0k70r87eQ3GA0UMLY-YUJ-bDqPM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "324610673489-bka3vn4kqm8igo2spi2di3jgmog92dfl.apps.googleusercontent.com",
+              "client_id": "691548204729-r89bgss5h153gggm5tkaku7lpqbmk1d9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
