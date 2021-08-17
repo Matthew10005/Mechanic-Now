@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottom_nav_dashboard"
+        android:title="Profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        app:cnb_backgroundColor="@color/teal_200"/>
+
+    <item
+        android:id="@+id/bottom_nav_map"
+        android:title="Map"
+        android:icon="@drawable/ic_baseline_map"
+        app:cnb_backgroundColor="@color/teal_200"/>
+
+    <item
+        android:id="@+id/bottom_nav_profile"
+        android:title="Logout"
+        android:icon="@drawable/ic_baseline_logout"
+        app:cnb_backgroundColor="@color/teal_200"/>
+</menu>

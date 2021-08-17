@@ -14,14 +14,14 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
-/*import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.mechanicnow.databinding.ActivityMapsUserBinding;
+//import com.example.mechanicnow.databinding.ActivityMapsUserBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,12 +31,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;*/
+import java.util.Objects;
 
-public class MapsActivityUser extends FragmentActivity {//implements OnMapReadyCallback, LocationListener
-/*
+public class MapsActivityUser extends FragmentActivity implements OnMapReadyCallback, LocationListener{
+
     private GoogleMap mMap;
-    private ActivityMapsUserBinding binding;
+    //private ActivityMapsUserBinding binding;
     private DatabaseReference reference;
     private LocationManager manager;
 
@@ -51,16 +51,16 @@ public class MapsActivityUser extends FragmentActivity {//implements OnMapReadyC
 
         manager =(LocationManager) getSystemService(LOCATION_SERVICE);
 
-        binding = ActivityMapsUserBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        //binding = ActivityMapsUserBinding.inflate(getLayoutInflater());
+        //setContentView(binding.getRoot());
 
-        reference = FirebaseDatabase.getInstance().getReference()
-                .child("User-101");
+        reference = FirebaseDatabase.getInstance().getReference("Mechanics").child("0714651665");
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        mapFragment.getMapAsync((OnMapReadyCallback) this);
 
         getLocationUpdates();
 
@@ -76,8 +76,6 @@ public class MapsActivityUser extends FragmentActivity {//implements OnMapReadyC
                         MyLocation location = snapshot.getValue(MyLocation.class);
                         if (location != null) {
                             myMarker.setPosition(new LatLng(location.getLatitude(),location.getLongitude()));
-
-
                         }
 
                     } catch (Exception e) {
@@ -131,7 +129,7 @@ public class MapsActivityUser extends FragmentActivity {//implements OnMapReadyC
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-    /* @Override
+    @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
@@ -155,20 +153,8 @@ public class MapsActivityUser extends FragmentActivity {//implements OnMapReadyC
     private void saveLocation(Location location) {
         reference.setValue(location);
     }
-   /* @Override
-    public void onLocationChanged(@NonNull Location location) {
-        if(location != null){
-            saveLocation(location);
-        } else {
-            Toast.makeText(this, "No Location", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void saveLocation(Location location) {
-        reference.setValue(location);
-    }
-
-    /*@Override
+/*
+    @Override
     public void onConnected(@Nullable @org.jetbrains.annotations.Nullable Bundle bundle) {
 
     }

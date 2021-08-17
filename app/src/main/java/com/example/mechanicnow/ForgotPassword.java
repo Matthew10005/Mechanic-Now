@@ -15,11 +15,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+import org.jetbrains.annotations.NotNull;
+
 //import org.jetbrains.annotations.NotNull;
 
 public class ForgotPassword extends AppCompatActivity {
 
-/*
     private EditText emailEditText;
     private Button resetPasswordButton;
     private ProgressBar progressBar;
@@ -69,5 +70,5 @@ public class ForgotPassword extends AppCompatActivity {
              }
             }
         });
-    }*/
+    }
 }

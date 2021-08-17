@@ -14,7 +14,7 @@ public class SessionManager {
     private static final String IS_LOGIN = "IsLoggedIn";
 
     public static final String KEY_NAME = "full_name";
-    public static final String KEY_DATE = "age";
+    public static final String KEY_DATE = "date of birth";
     public static final String KEY_EMAIL = "email_address";
     public static final String KEY_PHONE = "phone_number";
     public static final String KEY_PASSWORD = "pass_word";
@@ -24,14 +24,14 @@ public class SessionManager {
         sharedPreferences = context.getSharedPreferences("sharedLoginPreferences", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
-    public void createLoginSession(String nameFromDB, String ageFromDB, String emailFromDB, String phoneFromDB, String passFromDB) {
+    public void createLoginSession(String nameFromDB, String dateFromDB, String emailFromDB, String phoneFromDB) {
         editor.putBoolean(IS_LOGIN, true);
 
         editor.putString(KEY_NAME, nameFromDB);
-        editor.putString(KEY_DATE, ageFromDB);
+        editor.putString(KEY_DATE, dateFromDB);
         editor.putString(KEY_EMAIL, emailFromDB);
         editor.putString(KEY_PHONE, phoneFromDB);
-        editor.putString(KEY_PASSWORD, passFromDB);
+        //editor.putString(KEY_PASSWORD, passFromDB);
 
         editor.commit();
     }
