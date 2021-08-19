@@ -1,16 +1,18 @@
 package com.example.mechanicnow;
-
 public class RegistrationHelper {
+    String name, date, email, phone, username, password;
 
-    String name, date, email, phone, password;
+    public RegistrationHelper(){
 
+    }
 
-    public RegistrationHelper(String full_name, String date, String email_address, String phone_number, String pass_word) {
-        this.name = full_name;
+    public RegistrationHelper(String name, String date, String email, String phone, String username, String password) {
+        this.name = name;
         this.date = date;
-        this.email = email_address;
-        this.phone = phone_number;
-        this.password = pass_word;
+        this.email = email;
+        this.phone = phone;
+        this.username = username;
+        this.password = password;
     }
 
     public String getName() {
@@ -25,7 +27,8 @@ public class RegistrationHelper {
         return date;
     }
 
-    public void setDate(String date) { this.date = date;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getEmail() {
@@ -44,6 +47,14 @@ public class RegistrationHelper {
         this.phone = phone;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -52,3 +63,4 @@ public class RegistrationHelper {
         this.password = password;
     }
 }
+

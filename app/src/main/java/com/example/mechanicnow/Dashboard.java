@@ -1,5 +1,4 @@
 package com.example.mechanicnow;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -7,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -15,10 +13,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.HashMap;
 
-public class Dashboard extends AppCompatActivity implements View.OnClickListener {
+public class Dashboard extends AppCompatActivity {
 
-    CardView profile, map;
-    Button logout;
+    CardView profile, records, appointment, emergency, find,log;
     RelativeLayout dash;
     TextView dash_user;
 
@@ -29,56 +26,25 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_dashboard);
 
         dash_user = findViewById(R.id.dash_user);
-        profile = findViewById(R.id.profile_card);
-        map = findViewById(R.id.maps_card);
-        logout = findViewById(R.id.logoutUser);
-
 
         SessionManager sessionManager = new SessionManager(this);
-        HashMap<String, String> userDetails = sessionManager.getUserDetails();
+        HashMap<String,String> userDetails = sessionManager.getUserDetails();
 
-        String full_name = userDetails.get(SessionManager.KEY_NAME);
+        String user_name = userDetails.get(SessionManager.KEY_USER);
 
-        dash_user.setText("Welcome " + full_name);
+        dash_user.setText("Welcome " + user_name);
 
         dash = findViewById(R.id.dash_board);
-        dash.setBackgroundResource(R.drawable.layout_header);
+        dash.setBackgroundResource(R.drawable.layout_border);
+        profile = findViewById(R.id.profile_card);
+        records = findViewById(R.id.records_card);
+        appointment = findViewById(R.id.appointment_card);
+        emergency = findViewById(R.id.emergency_card);
+        find = findViewById(R.id.find_card);
+        log = findViewById(R.id.log_card);
+
 
         profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, UserProfile.class);
-                startActivity(intent);
-            }
-        });
-
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, LandingPage.class);
-                startActivity(intent);
-            }
-        });
-
-        map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, MapsActivityUser.class);
-                startActivity(intent);
-            }
-        });
-
-
-        /*map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, MapsActivityUser.class);
-                startActivity(intent);
-            }
-        });*/
-
-
-     /*   profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Dashboard.this, Profile.class);
@@ -112,24 +78,10 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut(); //logout
-                startActivity(new Intent(getApplicationContext(), Login.class));
-                finish();
+                    FirebaseAuth.getInstance().signOut(); //logout
+                    startActivity(new Intent(getApplicationContext(), Login.class));
+                    finish();
             }
-        });*/
-
+        });
     }
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.maps_card:
-                startActivity(new Intent(Dashboard.this, MapsActivityUser.class));
-                break;
-            case R.id.logoutUser:
-                startActivity(new Intent(Dashboard.this, LandingPage.class));
-                break;
-        }
-    }
-
-
 }

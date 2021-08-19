@@ -13,17 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MechanicNow">
-        <activity android:name=".VerifyPhoneNumber"></activity>
-        <activity android:name=".MechanicDashboard" />
-        <activity android:name=".LandingPage" />
-        <activity android:name=".UserProfile" />
-        <activity android:name=".MechanicLogin" />
-        <activity android:name=".MechanicRegistration" />
+        <activity android:name=".Appointments"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".ChatBot" />
+        <activity android:name=".Login" />
+        <activity android:name=".OnBoard" />
+        <activity android:name=".Profile" />
         <activity android:name=".Dashboard" />
-        <activity android:name=".LoginPage" />
-        <activity android:name=".RegisterPage" />
-        <activity android:name=".MapsActivityTow" />
-        <activity android:name=".MapsActivityUser" />
+        <activity android:name=".Register" />
+        <activity android:name=".Records" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

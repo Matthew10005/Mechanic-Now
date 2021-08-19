@@ -14,9 +14,10 @@ public class SessionManager {
     private static final String IS_LOGIN = "IsLoggedIn";
 
     public static final String KEY_NAME = "full_name";
-    public static final String KEY_DATE = "date of birth";
+    public static final String KEY_DATE = "birth_date";
     public static final String KEY_EMAIL = "email_address";
     public static final String KEY_PHONE = "phone_number";
+    public static final String KEY_USER = "user_name";
     public static final String KEY_PASSWORD = "pass_word";
 
     public SessionManager(Context _context) {
@@ -24,14 +25,17 @@ public class SessionManager {
         sharedPreferences = context.getSharedPreferences("sharedLoginPreferences", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
-    public void createLoginSession(String nameFromDB, String dateFromDB, String emailFromDB, String phoneFromDB) {
+
+    public void createLoginSession(String full_name, String birth_date, String email_address, String phone_number, String user_name, String pass_word) {
+
         editor.putBoolean(IS_LOGIN, true);
 
-        editor.putString(KEY_NAME, nameFromDB);
-        editor.putString(KEY_DATE, dateFromDB);
-        editor.putString(KEY_EMAIL, emailFromDB);
-        editor.putString(KEY_PHONE, phoneFromDB);
-        //editor.putString(KEY_PASSWORD, passFromDB);
+        editor.putString(KEY_NAME, full_name);
+        editor.putString(KEY_DATE, birth_date);
+        editor.putString(KEY_EMAIL, email_address);
+        editor.putString(KEY_PHONE, phone_number);
+        editor.putString(KEY_USER, user_name);
+        editor.putString(KEY_PASSWORD, pass_word);
 
         editor.commit();
     }
@@ -43,6 +47,7 @@ public class SessionManager {
         userData.put(KEY_DATE, sharedPreferences.getString(KEY_DATE, null));
         userData.put(KEY_EMAIL, sharedPreferences.getString(KEY_EMAIL, null));
         userData.put(KEY_PHONE, sharedPreferences.getString(KEY_PHONE, null));
+        userData.put(KEY_USER, sharedPreferences.getString(KEY_USER, null));
         userData.put(KEY_PASSWORD, sharedPreferences.getString(KEY_PASSWORD, null));
 
         return userData;
@@ -60,5 +65,4 @@ public class SessionManager {
         editor.clear();
         editor.commit();
     }
-
 }

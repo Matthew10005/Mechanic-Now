@@ -1,10 +1,13 @@
 package com.example.mechanicnow;
-
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Pair;
+import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -12,35 +15,43 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 3000;
+    private static int SPLASH_SCREEN = 2000;
 
-    ImageView logo;
-    TextView app_title, app_sub_tittle;
-    Animation topAnim, bottomAnim;
+    //Animation variables
+    Animation top_anim, bottom_anim;
+    ImageView top_image;
+    TextView text_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        logo = findViewById(R.id.logo);
-        app_title = findViewById(R.id.app_title);
-        app_sub_tittle = findViewById(R.id.app_subtitle);
+        //Animations
+        top_anim = AnimationUtils.loadAnimation(this, R.anim.top_anim);
+        bottom_anim = AnimationUtils.loadAnimation(this, R.anim.bottom_anim);
 
-        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_anim);
-        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_anim);
+        //Hooks
+        top_image = findViewById(R.id.imageView);
+        text_image = findViewById(R.id.text);
 
-        logo.setAnimation(topAnim);
-        app_title.setAnimation(bottomAnim);
-        app_sub_tittle.setAnimation(bottomAnim);
+        //Assign Animation
+        top_image.setAnimation(top_anim);
+        text_image.setAnimation(bottom_anim);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, LandingPage.class);
-                startActivity(intent);
-                finish();
+                Intent intent = new Intent(MainActivity.this, OnBoard.class);
+
+                Pair[] pairs = new Pair[2];
+                pairs[0] = new Pair<View, String>(top_image, "logo");
+                pairs[1] = new Pair<View, String>(text_image, "logo_text");
+
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairs);
+                startActivity(intent,options.toBundle());
             }
-        },SPLASH_TIME_OUT);
+        },SPLASH_SCREEN);
     }
 }
